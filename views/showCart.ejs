@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body style="background-color : rebeccapurple">
+    
+    <div class="offer" style="margin: 250px">
+        <div class="small container">
+            <form class="form"  action= '' method="POST" id="form1">
+           
+                <% AllProduct.forEach((article)=> { %>
+                    <div class="col-4">
+                        <img src="images/<%= article.Product %>" style = "width : 50">
+                        <h1 style = "color:rgb(27, 26, 27)">Red Printed T-Shirt</h1>
+                        <div class="rating">
+                            <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-o" aria-hidden="true"></i> -->
+                            <h2 style = "color:#bd0303"><%= article.Detail %></h2>
+        
+                        </div>
+                        <p><span style = "color:rgb(27, 26, 27)">Price </span> <h2 style = "color:rgb(27, 26, 27)"><%= article.Price %></h2></p>
+                    </div>  <% }) %>
+                    
+            <a  href = "/UserLoginForm" class="btn" style="background-color: rgb(53, 25, 80);"> Back</a>
+        </form>
+        </div>
+    
+    </div>
+   
+</body>
+
+</html>

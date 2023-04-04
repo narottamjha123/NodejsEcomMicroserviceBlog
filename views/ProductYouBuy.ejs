@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+
+<body style="background-color : rebeccapurple">
+    
+    <div class="offer" style="margin: 250px">
+        <div class="small container">
+            <div class="row">
+                <div class="col-2">
+                    <img src='images/<%= data.Product %>' class="offer-img" style="width:300px">
+                </div>
+                <div class="col-2 mt-5">
+                    <div class="form-group row">
+                        <h1 for="Name" class="col-sm-2 col-form-label" style="color : rgb(194, 123, 123)">Quantity
+                        </h1>
+                        <div class="col-sm-10">
+                           <h1 style = "color : black"><%= data.Quantity %> </h1>
+                        </div>
+                        <h1 for="Name" class="col-sm-2 col-form-label" style="color : rgb(194, 123, 123)">Price
+                        </h1>
+                        <div class="col-sm-10">
+                          
+                            <h1 style = "color : black"><%= data.Price %></h1>
+                         </div>
+                         <div class="col-sm-10">
+                          <span style = "color:black">Product will Reach in You next 10 days</span>
+                         </div>
+                         <div class="col-sm-10">
+                            <a href="/UserLoginForm" class = "btn">back</a>
+                           </div>
+                    </div>
+                </div>
+              
+            </div>     
+        </div>
+       
+    </div>
+   
+</body>
+
+</html>

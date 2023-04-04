@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<script type="text/javascript" language="javascript">
+    function checkform() {
+        var ProductName = document.getElementById("ProductName");
+        var ProductCost = document.getElementById("ProductCost");
+        var ProductValue = document.getElementById("ProductValue");
+        var cansubmit = true;
+
+        (ProductName && ProductName.value.length != '') && (ProductCost && ProductCost.value != '') && (ProductValue && ProductValue.value != '') ? (cansubmit = true) : (cansubmit = false);
+
+        if (cansubmit) {
+            document.getElementById('submitbutton').disabled = false;
+            document.getElementById('submitbutton').style.backgroundColor = " rgb(161, 201, 116)";
+
+        } else {
+            document.getElementById('submitbutton').disabled = true;
+        }
+    }
+</script>
+
+<body style="background-color : rebeccapurple">
+    
+    <h1>Add Product</h1>
+    <div class="offer" style="margin: 100px">
+        <div class="small container">
+            
+            <form class="form"  action= '/AddRecord' method="POST" id="form1">
+            <div class="row">
+                <div class="col-2">
+                    <img src='images/Laptop1.jpg' style = "width : 200%" class="offer-img" style="width:300px">
+                </div>
+                <div class="col-2 mt-5">
+                    <div class="form-group row">
+                        <h1 for="Name" class="col-sm-2 col-form-label" style="color : rgb(194, 123, 123)">Product Name
+                        </h1>
+                        <div class="col-sm-10">
+                            <input type="Name" class=" InputStyle fill" id="ProductName" placeholder="Product Name"
+                                name="Product" onKeyup="checkform()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h1 for="Name" class="col-sm-2 col-form-label" style="color : rgb(63, 48, 131)">Product Cost
+                        </h1>
+                        <div class="col-sm-10">
+                            <input type="Name" class="form-control InputStyle"  id="ProductCost" placeholder="Cost" name="Cost"
+                                onKeyup="checkform()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <h1 for="Name" class="col-sm-2 col-form-label" style="color : rgb(161, 201, 116)">Product Value
+                        </h1>
+                        <div class="col-sm-10">
+                            <input type="Name" class="form-control InputStyle"  style="height :100px" id="ProductValue"
+                                name = "Detail" placeholder="Description" onKeyup="checkform()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <button  class="btn" disabled = "disabled" style="background-color: rgb(119, 110, 113);"  id ="submitbutton">Update</button>
+            <button href='' class="btn" style="background-color: rgb(53, 25, 80);">RESET</button>
+        </form>
+        </div>
+    
+    </div>
+   
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<script type="text/javascript">
+
+    function getConfirmation(Url) {
+        var retVal = confirm("Do you want to Delte This");
+        if (retVal == true) {
+
+            window.location.href = window.location.href.split('/Admin')[0] + Url;
+        }
+    }
+
+</script>
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="navbar">
+				<div class="logo">
+					<img src="images/logo.png" width="125px">
+				</div>
+				<nav>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/MyProduct/<%= AllProduct[1] %>">My Product</a></li>
+					</ul>
+				</nav>
+				<img  src="images/cart.png" width="30px" height="30px">
+				<a href = '/ShowCart/<%= AllProduct[1] %>'>Show Cart</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<h1>Give Your Workout <br>A new styles</h1>
+				<p>Enjoy Shoping </p>
+
+			</div>
+			<div class="col-2">
+				<img src="images/mainpage.png"style = "width:200%">
+			</div>
+		</div>
+	</div>
+	<div class="small-container">
+		<h2 class="title">Featured Products</h2>
+		<div class="row" style="background-color: rgb(197, 199, 198)">
+
+			<% AllProduct[0].forEach((article)=> { %>
+			<div class="col-4">
+				<img src="images/<%= article.Product %>">
+				<h1>Red Printed T-Shirt</h1>
+				<div class="rating">
+					<h2 style = "color:#bd0303"><%= article.Detail %></h2>
+
+				</div>
+				<p><span style = "color:rgb(95, 32, 153)">Price </span> <h2><%= article.Price %></h2></p>
+				<a href = '/BuyProduct/<%= AllProduct[1] %>/<%= article.ID %>/<%= AllProduct[1] %>' class = "btn">Buy&#8594;</a>
+
+				<!-- <% AllProduct[2].forEach((x)=> { %>
+			 
+					<% if(x.productID == article.ID && x.userID == AllProduct[1] ) { %>
+						<a href = '/AddToCart/<%= article.ID %>/<%= AllProduct[1] %>' class = "btn" style = "background-color: rgb(223, 12, 30);">Remove Cart&#8594;</a>
+					<% } %>
+		    	<% }) %> -->
+                
+				<a href = '/AddToCart/<%= article.ID %>/<%= AllProduct[1] %>' class = "btn" style = "background-color: rgb(223, 12, 30);">Remove Cart&#8594;</a>
+				<a href = '/AddToCart/<%= article.ID %>/<%= AllProduct[1] %>' class = "btn" style = "background-color: rgb(30, 44, 245);">Add To Cart&#8594;</a>
+
+
+			</div>  <% }) %>
+
+	<div class="offer">
+
+        
+		<div class = "small container">
+          
+             <div class = "row">
+                             <div class="col-2">
+                                     <img src = "images/exclusive.png" class="offer-img">
+							 </div>
+							 <div class="col-2">
+                                       <p>exclusivly Available on Redstore</p>
+									   <h1>smart Band 4</h1>
+									   <small>The Mi Start Band 4 features a 39.9% larger 
+										   (than MI Band 3) AMOLED Color full-touch display width
+										   adjustable brightness, so everything is clear as can be.
+
+									   </small>
+                                      
+							 </div>
+			 </div>
+
+		</div>
+	</div>
+
+	<div class="testimonial">
+		
+	</div>
+</body>
+
+</html>
